@@ -1,24 +1,26 @@
 const Header = () => {
+  const menuItem = ["Home", "About Us", "Contact"];
 
-    const menuItem = [
-        {link: '/', tag: 'Home'},
-        {link: '/', tag: 'About'},
-        {link: '/', tag: 'Contact'},
-    ]
-
-    return (
-        <header className="container mx-auto md:flex items-center justify-between my-4 px-2">
-            <nav className="flex items-center gap-2">
-                <img className="w-16 rounded-full" src="https://i.ibb.co/xsrKkL4/ollyo-logo.jpg" alt="" />
-                <h1 className="text-2xl font-semibold">Ollyo</h1>
-            </nav>
-            <nav className="space-x-4">
-                {
-                    menuItem.map((menu, index) => <a className="text-green-600 text-2xl font-medium hover:text-teal-600 duration-300" href={menu.link} key={index}>{menu.tag}</a>)
-                }
-            </nav>
-        </header>
-    );
+  return (
+    <div className="container mx-auto flex justify-between items-center my-2">
+      <div>
+        <button className="text-3xl font-semibold flex items-center gap-2">
+            <img className="w-12 h-12 rounded-full" src="https://i.ibb.co/xsrKkL4/ollyo-logo.jpg" alt="" />
+            Ollyo
+        </button>
+      </div>
+      <div className="space-x-4">
+        {menuItem.map((item, index) => (
+          <button
+            key={index}
+            className="px-6 py-3 bg-green-400 rounded-xl text-lg font-medium hover:bg-teal-400 duration-300"
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Header;
